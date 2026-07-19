@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-  
+    <link rel="stylesheet" href="CreateAccount.css">
 
-    <title>Login</title>
+    <title>Create an account</title>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
 
         <section class="container">
 
-            <h1>Welcome <span>back</span></h1>
+            <h1>Create an <span>account</span></h1>
 
             <form class="Inputs">
                 <div class="icon">
@@ -26,7 +25,7 @@
                     <i class="fa-solid fa-user"></i>
                     <div class="CaixaEmail">
 
-                        <input class="email" type="text" placeholder="username or Email">
+                        <input type="email" placeholder="username or Email">
                     </div>
                 </div>
 
@@ -36,17 +35,33 @@
                         <i class="fa-solid fa-lock"></i>
                         <div class="CaixaSenha">
 
-                            <input class="senha" type="password" placeholder="Password">
+                            <input type="password" placeholder="Password">
 
                         </div>
+
                     </div>
-                    <a href="./forgotPassword/Forgot.html">Forgot Passaword</a>
+                   
+                </div>
+
+                
+                <div class="ContainerSenha">
+                    <div class="icon">
+
+                        <i class="fa-solid fa-lock"></i>
+                        <div class="CaixaSenha  ConfirmSenha">
+
+                            <input type="password" placeholder="Confirm password">
+
+                        </div>
+
+                    </div>
+                   
                 </div>
             </form>
             <div class="Start">
-                <h2>Sign in</h2>
+                <h2>Register</h2>
 
-                <button class="enviarDados">
+                <button>
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
@@ -67,10 +82,10 @@
                     </button>
                 </div>
             </div>
-           
+           <a href="">back</a>
         </section>
     </main>
-    <script src="paginaPrincipal.js"></script>
+    <script src="CreateAccount.js"></script>
 </body>
 
 </html>

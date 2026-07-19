@@ -1,0 +1,48 @@
+@import url("../style.css");
+
+
+
+
+.Start{
+ 
+    margin-top:20px;
+}
+
+
+
+.container  a{
+    text-decoration: none;
+    margin-top:30px;
+    color:#8d8d8d;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.container a:hover{
+    color:white;
+}
+
+.cardSucesso {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #1b4332;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    animation: aparecer .3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
