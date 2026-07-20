@@ -47,6 +47,7 @@ main{
 }
 
 
+
 .container h1{
     color:white;
     font-size:2.3rem;
@@ -196,7 +197,7 @@ border: 2px solid #5578ff;
 
 .entraCom p{
     color:#8d8d8d;
-    font-size:.9rem;
+    font-size:1.4rem;
     margin-bottom:15px;
 }
 
@@ -314,8 +315,8 @@ border: 2px solid #5578ff;
     }
 
     .entraCom p{
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+        font-size: 1.7rem;
+        margin-bottom: 45px;
     }
 
     .formas{
@@ -323,8 +324,8 @@ border: 2px solid #5578ff;
     }
 
     .formas button{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .fa-google,

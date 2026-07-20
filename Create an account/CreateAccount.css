@@ -80,7 +80,7 @@
 }
  
    .icon{
-    width: 360px;
+    
         height: 40px;
         padding: 0 15px;
     }
@@ -91,4 +91,9 @@
         justify-content: space-between;
         padding: 0px 15px 0px 15px;
     }
+
+     .entraCom p{
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    } 
 }
