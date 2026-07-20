@@ -1,333 +1,215 @@
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Inter', sans-serif; /* Unificado */
 }
 
-body{
-    height:100vh;
+body {
+    height: 100vh;
     width: 100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#3f4754;
-    overflow:hidden;
-    position:relative;
-   
-    transition:  1s ease;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3f4754;
+    overflow: hidden;
+    position: relative;
+    transition: 1s ease;
 }
 
-
-main{
+main {
     width: 100%;
     height: 100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container{
-    display:flex ;
+.container {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 600px;
-    width:390px;
-    background:#1e1e1e;
-    border-radius:35px;
-    padding:45px 35px;
-    box-shadow:0 25px 50px rgba(0,0,0,.35);
-    transition:
-        opacity 0.45s ease,
-        transform 0.15s ease;
-    
-
+    width: min(390px, 100%);
+    min-height: 600px;
+    background: #1e1e1e;
+    border-radius: 35px;
+    padding: 45px 35px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.35);
+    transition: opacity 0.45s ease, transform 0.15s ease;
 }
 
-
-
-.container h1{
-    color:white;
-    font-size:2.3rem;
-    line-height:45px;
-    margin-bottom:15px;
-    text-transform:capitalize;
+.container h1 {
+    color: white;
+    font-size: 2.3rem;
+    line-height: 45px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
 }
 
-.container span{
-    display:block;
+.container span {
+    display: block;
 }
 
-.Inputs{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-   
+.Inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.icon{
-    display:flex;
-    align-items:center;
-    background:#2b2b2b;
-    height:55px;
-    border-radius:10px;
-    padding:0 14px;
-    transition: 1s;
+.icon {
+    display: flex;
+    align-items: center;
+    background: #2b2b2b;
+    height: 55px;
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: border 0.3s, box-shadow 0.3s; /* Transição otimizada */
 }
 
 .icon.ativo {
-   
-    
-    animation: foi 0.3s;
+    animation: foi 0.3s ease-in-out;
 }
 
 @keyframes foi {
-    0% {
-        transform: translateX(0);
-    }
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
 
-    20% {
-        transform: translateX(-10px);
-    }
+.icon:hover {
+    border: 2px solid #5578ff;
+    box-shadow: 0 0 25px #4169ff;
+}
 
-    40% {
-        transform: translateX(10px);
-    }
+.icon i {
+    color: #808080;
+    font-size: 15px;
+    margin-right: 12px;
+}
 
-    60% {
-        transform: translateX(-10px);
-    }
+.CaixaEmail, .CaixaSenha {
+    width: 100%;
+}
 
-    80% {
-        transform: translateX(10px);
-    }
+.icon input {
+    width: 100%;
+    height: 100%; /* Ajusta automaticamente ao tamanho do pai */
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+}
 
-    100% {
-        transform: translateX(0);
-    }
+.icon input::placeholder {
+    color: #7d7d7d;
+}
+
+.ContainerSenha {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ContainerSenha a {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: .8rem;
+    align-self: flex-end;
+}
+
+.ContainerSenha a:hover {
+    color: white;
+}
+
+.Start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.Start h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.Start button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #4169ff;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 18px;
+}
+
+.Start button:hover {
+    transform: scale(1.08);
+    background: #5578ff;
+    box-shadow: 0 0 25px #4169ff;
+}
+
+.entraCom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.entraCom p {
+    color: #8d8d8d;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.formas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formas button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #2b2b2b;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.formas button:hover {
+    background: #383838;
+    transform: translateY(-4px);
+}
+
+.fa-google { color: #EA4335; font-size: 20px; }
+.fa-facebook { color: #1877F2; font-size: 20px; }
+.fa-telegram { color: #229ED9; font-size: 20px; }
+
+/* Media Query Otimizada */
+@media (max-width: 767px) {
     
-}
-
-
-.icon:hover{
-border: 2px solid #5578ff;
-    box-shadow:0 0 25px #4169ff;
-}
-
-.icon i{
-    color:#808080;
-    font-size:15px;
-    margin-right:12px;
-}
-
-.CaixaEmail,
-.CaixaSenha{
-    width:100%;
-}
-
-.icon input{
-    width:100%;
- height: 50px;
-    background:none;
-    border:none;
-    outline:none;
-    color:white;
-    font-size:13px;
-}
-
-.icon input::placeholder{
-    color:#7d7d7d;
-  
-}
-
-.ContainerSenha{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.ContainerSenha a{
-    color:#d6d6d6;
-    text-decoration:none;
-    font-size:.8rem;
-    align-self:flex-end;
-}
-
-.ContainerSenha a:hover{
-    color:white;
-}
-
-.Start{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:30px;
-}
-
-.Start h2{
-    color:white;
-    font-size:2rem;
-    font-weight:500;
-}
-
-.Start button{
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:#4169ff;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
-    font-size:18px;
-}
-
-.Start button:hover{
-    transform:scale(1.08);
-    background:#5578ff;
-    box-shadow:0 0 25px #4169ff;
-}
-
-.entraCom{
-    margin-top:20px;
-    text-align:center;
-}
-
-.entraCom p{
-    color:#8d8d8d;
-    font-size:1.4rem;
-    margin-bottom:15px;
-}
-
-.formas{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
-
-.formas button{
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:#2b2b2b;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.formas button:hover{
-    background:#383838;
-    transform:translateY(-4px);
-}
-
-.fa-google{
-    color:#EA4335;
-    font-size:20px;
-}
-
-.fa-facebook{
-    color:#1877F2;
-    font-size:20px;
-}
-
-.fa-telegram{
-    color:#229ED9;
-    font-size:20px;
-}
-
-@media (max-width: 768px){
-
-
-    main{
+    
+    .container {
         width: 100%;
         min-height: 100vh;
+        border-radius: 0; 
+        padding: 30px 20px;
+        justify-content: center; 
     }
 
-    .container{
-        width: 100%;
-        min-height: 100vh;
-        border-radius: 0;
-        padding: 40px 20px;
-        justify-content: center;
-        gap: 20px;
+    .icon {
+        height: 48px; /* Altura ideal para toque com o dedo */
     }
 
-    .container h1{
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 20px;
+    .Start {
+        margin-top: 25px;
     }
 
-    .Inputs{
-        gap: 15px;
-    }
-
-    .icon{
-        height: 60px;
-        padding: 0 15px;
-    }
-
-    .icon i{
-        font-size: 1.2rem;
-    }
-
-    .icon input{
-        font-size: 1rem;
-    }
-
-    .icon input::placeholder{
-        font-size: 1rem;
-    }
-
-    .ContainerSenha{
-        margin-top: 5px;
-    }
-
-    .ContainerSenha a{
-        font-size: 1rem;
-        margin: 0;
-    }
-
-    .Start{
-        margin-top: 15px;
-    }
-
-    .Start h2{
-        font-size: 2rem;
-    }
-
-    .Start button{
-        width: 50px;
-        height: 50px;
-    }
-
-    .Start button i{
-        font-size: 1.3rem;
-    }
-
-    .entraCom{
-        margin-top: 10px;
-    }
-
-    .entraCom p{
-        font-size: 1.7rem;
-        margin-bottom: 45px;
-    }
-
-    .formas{
-        gap: 20px;
-    }
-
-    .formas button{
-        width: 60px;
-        height: 60px;
-    }
-
-    .fa-google,
-    .fa-facebook,
-    .fa-telegram{
-        font-size: 30px;
+    .entraCom {
+        margin-top: 30px;
     }
 }

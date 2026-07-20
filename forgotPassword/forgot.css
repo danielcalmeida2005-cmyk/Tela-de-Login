@@ -1,11 +1,16 @@
 @import url("../tela_de_login/style.css");
 
-.container {
-   
-    opacity: 0;
-    transform: translateX(60px) scale(0.96);
-    animation: entrar 0.15s ease forwards;
+
+@media (max-width: 480px){
+ 
+    .container{
+justify-content: flex-start;
+
+    }
+
+
 }
+
 
 @keyframes entrar {
     to {
@@ -57,14 +62,5 @@
 }
 
 
-@media (max-width: 7680px){
-    .container{
-    justify-content: flex-start;
 
-}
-
-.container h1{
-    margin-bottom: 45px;
-}
-}
 
