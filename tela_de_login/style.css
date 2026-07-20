@@ -198,7 +198,7 @@ main {
         min-height: 100vh;
         border-radius: 0; 
         padding: 30px 20px;
-        justify-content: center; 
+        justify-content: flex-start; 
     }
 
     .icon {
