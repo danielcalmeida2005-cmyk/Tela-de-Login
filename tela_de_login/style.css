@@ -241,12 +241,13 @@ border: 2px solid #5578ff;
     font-size:20px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
 body{
     overflow-y: auto;
 }
 
   .container{
+    border-radius: 0px;
     justify-content: space-around;
 width: 100%;
     min-height: 100vh;
@@ -259,7 +260,7 @@ width: 100%;
  .container h1{
         font-size: 4em;
         line-height:55px;
-    margin-bottom:10px;
+    margin-bottom:40px;
     }
 
 .Inputs{

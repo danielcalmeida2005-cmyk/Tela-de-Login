@@ -1,7 +1,12 @@
 @import url("../tela_de_login/style.css");
 
 
-
+.container h1{
+  
+    line-height:65px;
+    margin-bottom:45px;
+    text-transform:capitalize;
+}
 
 .Start{
  
