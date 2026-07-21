@@ -38,6 +38,19 @@ main {
     transition: opacity 0.45s ease, transform 0.15s ease;
 }
 
+.container  a{
+    text-decoration: none;
+    margin-top:20px;
+    color:#8d8d8d;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.container a:hover{
+    color:white;
+}
+
 .container h1 {
     color: white;
     font-size: 2.3rem;

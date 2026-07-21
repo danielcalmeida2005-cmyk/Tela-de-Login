@@ -58,12 +58,22 @@ function ValidacaoDeDados(){
         }, 1000);
         return;
     }
+    else{
+MostrarMensagem()
+        setTimeout(()=>{
+ window.location.href = '../tela_de_login/telaDelogin.html';
+        },3000)
+        
+    }
 
 
     
    DadosDoUsuario.push({
         email: valueEmail,
         senha: valuepassword
+
+
+
     });
 
     
@@ -73,7 +83,7 @@ function ValidacaoDeDados(){
     JSON.stringify(DadosDoUsuario)
 );
 console.log(DadosDoUsuario)
-MostrarMensagem()
+
 }
 
 
