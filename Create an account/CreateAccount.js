@@ -7,83 +7,33 @@ const validacao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
 buttonStart.addEventListener("click",()=>{
-  ValidacaoDeDados()  
-})
+
+    if(ValidacaoDeDados()){
+        enviarDados();
+    }
+
+});
+
 function ValidacaoDeDados(){
- let DadosDoUsuario = []
-   
 
     let valueEmail = email.value;
     let valuepassword = password.value;
     let valueConfirmPass = ConfirmPass.value;
 
-    if(valueEmail === "" || !validacao.test(valueEmail) ){
-        let divIcon = email.closest(".icon");
-
-        divIcon.classList.add("ativo");
-
-        setTimeout(() => {
-            divIcon.classList.remove("ativo");
-        }, 1000);
-
-        return;
+    if(valueEmail === "" || !validacao.test(valueEmail)){
+        return false;
     }
-
-
-
 
     if(valuepassword === ""){
-        console.log("Senha vazia");
-
-         let divIcon = password.closest(".icon");
-
-        divIcon.classList.add("ativo");
-
-        setTimeout(() => {
-            divIcon.classList.remove("ativo");
-        }, 1000);
-        return;
+        return false;
     }
-
 
     if(valuepassword !== valueConfirmPass){
-        console.log("Senhas diferentes")
-
-         let divIcon = ConfirmPass.closest(".icon");
-
-        divIcon.classList.add("ativo");
-
-        setTimeout(() => {
-            divIcon.classList.remove("ativo");
-        }, 1000);
-        return;
-    }
-    else{
-MostrarMensagem()
-        setTimeout(()=>{
- window.location.href = '../tela_de_login/telaDelogin.html';
-        },3000)
-        
+        return false;
     }
 
-
-    
-   DadosDoUsuario.push({
-        email: valueEmail,
-        senha: valuepassword
-
-
-
-    });
-
-    
-
-    localStorage.setItem(
-    "usuarios",
-    JSON.stringify(DadosDoUsuario)
-);
-console.log(DadosDoUsuario)
-
+    MostrarMensagem();
+    return true;
 }
 
 
@@ -108,3 +58,29 @@ function MostrarMensagem() {
         card.remove();
     }, 3000);
 }
+
+
+
+async function enviarDados() {
+
+    const dadosdousuario = {
+        email: email.value,
+        senha: password.value
+    };
+
+    const resposta = await fetch("http://localhost:3000/usuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosdousuario)
+    });
+
+    const dados = await resposta.json();
+
+    console.log(dados);
+      setTimeout(()=>{
+ window.location.href = '../tela_de_login/telaDelogin.html';
+        },3000)
+    
+    }
