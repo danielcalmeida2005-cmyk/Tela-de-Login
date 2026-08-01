@@ -8,7 +8,7 @@ app.use(express.json());
 let usuarios = [];
 let id = 1;
 
-app.post('/usuarios', (req, res) => {
+app.post('https://tela-de-login-hsj6.onrender.com/usuarios', (req, res) => {
 
 console.log(req.body);
     const { email, senha } = req.body;

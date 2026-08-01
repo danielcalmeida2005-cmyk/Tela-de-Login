@@ -68,7 +68,7 @@ async function enviarDados() {
         senha: password.value
     };
 
-    const resposta = await fetch("http://localhost:3000/usuarios", {
+    const resposta = await fetch("https://tela-de-login-hsj6.onrender.com/usuarios", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
