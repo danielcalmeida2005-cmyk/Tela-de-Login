@@ -80,7 +80,7 @@ async function enviarDados() {
 
     console.log(dados);
       setTimeout(()=>{
-window.location.href = '../tela_de_login/telaDelogin.html';
+window.location.href = '/tela_de_login/telaDelogin.html';
         },3000)
     
     }
