@@ -1,34 +1,67 @@
 
 let email = document.querySelector(".CaixaEmail input")
 let ButtonStart = document.querySelector(".Start button")
+let inputs = document.querySelector(".Inputs")
 let DadosDoUsuario = JSON.parse(
     localStorage.getItem("usuarios")
 ) || [];
 
 console.log(DadosDoUsuario)
+
 ButtonStart.addEventListener("click", () => {
     verificarEmail()
 })
+
+
 function verificarEmail() {
-    let valorEmail = email.value
+   let valorEmail = email.value 
 
     if (valorEmail === DadosDoUsuario[0].email) {
+criainputSenha()
+     }
 
- let card = document.createElement("div");
-        let p = document.createElement("p");
+     else{
+        let mensagemErro = document.createElement("p");
+        mensagemErro.textContent = "Email não encontrado";
+        mensagemErro.style.color = "red";
+        inputs.appendChild(mensagemErro);
+        return;
+     }
+    }
+let containerSenha = document.createElement("div");
+containerSenha.className = "ContainerSenha";
 
-        card.classList.add("mensagemEmail");
+let icon = document.createElement("div");
+icon.className = "icon";
 
-        p.textContent = "Email já existe!";
+let iconeSenha = document.createElement("i");
+iconeSenha.className = "fa-solid fa-lock";
 
-        card.appendChild(p);
+let caixaSenha = document.createElement("div");
+caixaSenha.className = "CaixaSenha";
 
-        document.body.appendChild(card);
-setTimeout(()=>{
-card.remove()
-},3000)
+let inputSenha = document.createElement("input");
+inputSenha.type = "password";
+inputSenha.placeholder = "Digite sua nova senha";
+ 
 
-       
+
+
+
+    function criainputSenha() {
+
+        containerSenha.innerHTML = ""; 
+DadosDoUsuario[0].senha = inputSenha.value;
+console.log(DadosDoUsuario[0].senha)
+
+
+// Montando a estrutura
+inputs.appendChild(containerSenha);
+caixaSenha.appendChild(inputSenha);
+icon.appendChild(iconeSenha);
+icon.appendChild(caixaSenha);
+containerSenha.appendChild(icon);
+
+
     }
 
-}

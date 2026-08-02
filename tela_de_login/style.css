@@ -226,3 +226,57 @@ main {
 .botoes a {
  margin: 20px 0px 20px 0px;
 }
+
+
+
+
+
+@media (max-width: 1366px) {
+
+  
+    .container  h1{
+        font-size: 4em;
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+        
+    }
+
+.icon i {
+    color: #808080;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
+.icon input{
+    font-size: 1.5em;
+}
+
+ 
+.ContainerSenha a{
+    font-size: 1.2em;
+}
+
+.Start h2{
+    font-size: 2.5rem;
+}
+.Start button{
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+}
+
+.formas button{
+    width: 70px;
+    height: 70px;
+}
+
+.formas button i{
+    font-size: 30px;
+}
+
+.botoes a {
+ margin: 20px 0px 0px 0px;
+}
+}

@@ -81,6 +81,6 @@ async function enviarDados() {
     console.log(dados);
       setTimeout(()=>{
 window.location.href = "./telaDelogin.html";
-        },3000)
+        },1000)
     
     }

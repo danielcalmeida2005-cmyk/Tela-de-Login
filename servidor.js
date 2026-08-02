@@ -26,6 +26,28 @@ console.log(req.body);
 });
 
 
+app.post('/login', (req, res) => {
+const { email,senha} = req.body;
+console.log(req.body)
+
+ const usuario = usuarios.find(user => user.email === email && user.senha === senha );
+  
+     if (usuario) {
+        return res.json({
+            sucesso: true,
+            mensagem: "Login realizado"
+        });
+    }
+
+    return res.json({
+        sucesso: false,
+        mensagem: "Email ou senha inválidos"
+    });
+
+});
+
+
+
 const port = process.env.PORT || 3000;
 app.listen(port,() => {
     console.log(`Servidor rodando na porta ${port}`);
