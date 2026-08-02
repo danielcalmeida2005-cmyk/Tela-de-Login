@@ -47,6 +47,27 @@ console.log(req.body)
 });
 
 
+app.post('/senha',(req,res)=>{
+const {email} = req.body
+
+
+ const usuario = usuarios.find(user => user.email === email);
+  
+     if (usuario) {
+        return res.json({
+            sucesso: true,
+           
+        });
+    }
+
+    return res.json({
+        sucesso: false,
+       
+    });
+
+
+})
+
 
 const port = process.env.PORT || 3000;
 app.listen(port,() => {

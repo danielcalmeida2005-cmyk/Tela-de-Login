@@ -2,32 +2,20 @@
 let email = document.querySelector(".CaixaEmail input")
 let ButtonStart = document.querySelector(".Start button")
 let inputs = document.querySelector(".Inputs")
-let DadosDoUsuario = JSON.parse(
-    localStorage.getItem("usuarios")
-) || [];
+// let DadosDoUsuario = JSON.parse(
+//     localStorage.getItem("usuarios")
+// ) || [];
 
-console.log(DadosDoUsuario)
+// console.log(DadosDoUsuario)
 
 ButtonStart.addEventListener("click", () => {
-    verificarEmail()
+    recuperaSenha()
 })
 
 
-function verificarEmail() {
-   let valorEmail = email.value 
 
-    if (valorEmail === DadosDoUsuario[0].email) {
-criainputSenha()
-     }
 
-     else{
-        let mensagemErro = document.createElement("p");
-        mensagemErro.textContent = "Email não encontrado";
-        mensagemErro.style.color = "red";
-        inputs.appendChild(mensagemErro);
-        return;
-     }
-    }
+
 let containerSenha = document.createElement("div");
 containerSenha.className = "ContainerSenha";
 
@@ -43,25 +31,53 @@ caixaSenha.className = "CaixaSenha";
 let inputSenha = document.createElement("input");
 inputSenha.type = "password";
 inputSenha.placeholder = "Digite sua nova senha";
- 
 
 
+function criainputSenha() {
+
+    containerSenha.innerHTML = "";
+    DadosDoUsuario[0].senha = inputSenha.value;
+    console.log(DadosDoUsuario[0].senha)
 
 
-    function criainputSenha() {
-
-        containerSenha.innerHTML = ""; 
-DadosDoUsuario[0].senha = inputSenha.value;
-console.log(DadosDoUsuario[0].senha)
-
-
-// Montando a estrutura
-inputs.appendChild(containerSenha);
-caixaSenha.appendChild(inputSenha);
-icon.appendChild(iconeSenha);
-icon.appendChild(caixaSenha);
-containerSenha.appendChild(icon);
+    // Montando a estrutura
+    inputs.appendChild(containerSenha);
+    caixaSenha.appendChild(inputSenha);
+    icon.appendChild(iconeSenha);
+    icon.appendChild(caixaSenha);
+    containerSenha.appendChild(icon);
 
 
+}
+
+async function recuperaSenha() {
+    let VerificaEmail = email.value
+
+    let resposta = await fetch("https://tela-de-login-hsj6.onrender.com/senha", {
+
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: VerificaEmail
+        }
+        )
+
+    })
+
+    let dados = await resposta.json()
+
+    console.log(dados)
+
+    if (dados.sucesso) {
+        criainputSenha()
     }
 
+    else {
+        let mensagemErro = document.createElement("p");
+        mensagemErro.textContent = "Email não encontrado";
+        mensagemErro.style.color = "red";
+        inputs.appendChild(mensagemErro);
+    }
+}

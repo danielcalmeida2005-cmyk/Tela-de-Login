@@ -58,16 +58,33 @@ async function verificarLogin(email, senha) {
             })
         });
 
-console.log(dados)
+        console.log(dados)
         let resposta = await dados.json();
-console.log(resposta)
+        console.log(resposta)
+        
         if (resposta.sucesso) {
-            console.log("Parabéns, login realizado");
+            let mensagem = document.createElement("div");
+            mensagem.className = "MensagemSucesso";
+
+            let texto = document.createElement("p");
+            texto.textContent = "Seus dados foram validados com sucesso!";
+            mensagem.appendChild(texto);
+
+            document.body.appendChild(mensagem);
+
         } else {
-            console.log("Email ou senha inválidos");
+            let mensagem = document.createElement("div");
+            mensagem.className = "MensagemErro";
+
+            let texto = document.createElement("p");
+            texto.textContent = "Email ou senha inválidos.";
+
+            mensagem.appendChild(texto);
+
+            document.body.appendChild(mensagem);
         }
 
-    } catch(erro) {
+    } catch (erro) {
 
         console.error("Falha ao verificar login:", erro);
 
