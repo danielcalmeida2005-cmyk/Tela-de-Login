@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #3f4754;
+    background: #1e1e1e;
     overflow: hidden;
     position: relative;
     transition: 1s ease;
@@ -29,17 +29,17 @@ main {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
     height: 600px;
     width: min(390px, 100%);
-    background: #1e1e1e;
+    
     padding: 45px 35px;
     transition: opacity 0.45s ease, transform 0.15s ease;
 }
 
 .container  a{
     text-decoration: none;
-  
+  font-size: 1.5em;
     color:#8d8d8d;
     text-align:center;
     cursor:pointer;
@@ -52,7 +52,7 @@ main {
 
 .container h1 {
     color: white;
-    font-size: 2.3rem;
+    font-size: 2.5em;
     line-height: 45px;
     margin-bottom: 15px;
     text-transform: capitalize;
@@ -65,7 +65,7 @@ main {
 .Inputs {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .icon {
@@ -170,6 +170,11 @@ main {
   display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+
+.botoes a {
+  margin-top: 15px;
 }
 .entraCom {
    
@@ -206,78 +211,3 @@ main {
 .fa-google { color: #EA4335; font-size: 20px; }
 .fa-facebook { color: #1877F2; font-size: 20px; }
 .fa-telegram { color: #229ED9; font-size: 20px; }
-
-@media (max-width: 600px) {
-
-    body {
-        background: #1e1e1e;
-        overflow: hidden;
-    }
-
-    main {
-        padding: 0;
-    }
-
-    .container {
-        width: 100%;
-        max-width: none;
-        height: 100vh;
-        padding: 35px 25px;
-        border-radius: 0;
-    }
-
-
-    .container h1 {
-        font-size: 1.9rem;
-        line-height: 35px;
-    }
-
-
-    .icon {
-        height: 50px;
-        padding: 0 12px;
-    }
-
-
-    .icon i {
-        font-size: 14px;
-    }
-
-
-    .icon input {
-        font-size: 12px;
-    }
-
-
-    .Start h2 {
-        font-size: 1.7rem;
-    }
-
-
-    .Start button {
-        width: 45px;
-        height: 45px;
-        font-size: 16px;
-    }
-
-
-    .entraCom p {
-        font-size: 1.1rem;
-    }
-
-
-    .formas {
-        gap: 15px;
-    }
-
-
-    .formas button {
-        width: 45px;
-        height: 45px;
-    }
-
-
-    .botoes {
-        gap: 15px;
-    }
-}
