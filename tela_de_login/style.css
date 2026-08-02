@@ -23,14 +23,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: min(390px, 100%);
-    min-height: 600px;
+    height: 600px;
     background: #1e1e1e;
     border-radius: 35px;
     padding: 45px 35px;
@@ -40,7 +41,7 @@ main {
 
 .container  a{
     text-decoration: none;
-    margin-top:20px;
+  
     color:#8d8d8d;
     text-align:center;
     cursor:pointer;
@@ -139,7 +140,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    
 }
 
 .Start h2 {
@@ -166,8 +167,14 @@ main {
     box-shadow: 0 0 25px #4169ff;
 }
 
+
+.botoes{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .entraCom {
-    margin-top: 20px;
+   
     text-align: center;
 }
 
@@ -202,27 +209,4 @@ main {
 .fa-facebook { color: #1877F2; font-size: 20px; }
 .fa-telegram { color: #229ED9; font-size: 20px; }
 
-/* Media Query Otimizada */
-@media (max-width: 767px) {
-    
-    
-    .container {
-        width: 100%;
-        min-height: 100vh;
-        border-radius: 0; 
-        padding: 30px 20px;
-        justify-content: flex-start; 
-    }
 
-    .icon {
-        height: 48px; /* Altura ideal para toque com o dedo */
-    }
-
-    .Start {
-        margin-top: 25px;
-    }
-
-    .entraCom {
-        margin-top: 30px;
-    }
-}
