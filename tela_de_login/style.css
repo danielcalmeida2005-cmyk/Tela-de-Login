@@ -10,7 +10,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+   
     background: #1e1e1e;
     overflow: hidden;
     position: relative;
@@ -42,7 +42,7 @@ main {
 
 .container  a{
     text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.3em;
     color:#8d8d8d;
     text-align:center;
     cursor:pointer;
@@ -56,7 +56,7 @@ main {
 
 .container h1 {
     color: white;
-    font-size: 2.5em;
+    font-size: 3em;
     line-height: 45px;
     margin-bottom: 30px;
     text-transform: capitalize;
@@ -115,7 +115,7 @@ main {
     border: none;
     outline: none;
     color: white;
-    font-size: 13px;
+    font-size: 1.2em;
 }
 
 .icon input::placeholder {
@@ -131,7 +131,7 @@ main {
 .ContainerSenha a {
     color: #d6d6d6;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: 1em;
     align-self: flex-end;
 }
 
@@ -181,9 +181,7 @@ main {
     ;
 }
 
-.botoes a {
-  margin-top: 40px;
-}
+
 .entraCom {
    
     text-align: center;
@@ -191,14 +189,21 @@ main {
 
 .entraCom p {
     color: #8d8d8d;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+   
 }
 
-
+.formas{
+    display: flex;
+   
+    justify-content: center;
+  gap: 20px;
+}
 
 .formas button {
+   
     margin-top: 20px;
+   
     width: 50px;
     height: 50px;
     border: none;
@@ -216,3 +221,8 @@ main {
 .fa-google { color: #EA4335; font-size: 20px; }
 .fa-facebook { color: #1877F2; font-size: 20px; }
 .fa-telegram { color: #229ED9; font-size: 20px; }
+
+
+.botoes a {
+ margin: 20px 0px 20px 0px;
+}
