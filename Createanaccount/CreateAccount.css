@@ -1,18 +1,30 @@
 @import url("../tela_de_login/style.css");
 
-
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    
+   justify-content: start;
+ 
+    transition: opacity 0.45s ease, transform 0.15s ease;
+}
 .container h1{
        
         line-height: 1.2;
-        margin-bottom: 30px;
+        margin:0px 0px 30px 0px;
     }
 
 
+   
 .Start{
  
     margin-top:20px;
 }
 
+.botoes{
+    margin-bottom: 20px;
+}
 
 
 
