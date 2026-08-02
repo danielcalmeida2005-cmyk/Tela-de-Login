@@ -1,11 +1,11 @@
 @import url("../tela_de_login/style.css");
 
 
-@media (max-width: 480px){
+@media (max-width: 600px){
  
     .container{
 justify-content: flex-start;
-
+gap: 20px;
     }
 
 
