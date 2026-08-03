@@ -7,9 +7,13 @@ let inputs = document.querySelector(".Inputs")
 // ) || [];
 
 // console.log(DadosDoUsuario)
-
+let etapa = 1
 ButtonStart.addEventListener("click", () => {
-    recuperaSenha()
+      if (etapa === 1) {
+        recuperaSenha();
+    } else {
+        enviarNovaSenha();
+    }
 })
 
 
@@ -35,9 +39,9 @@ inputSenha.placeholder = "Digite sua nova senha";
 
 function criainputSenha() {
 
-    containerSenha.innerHTML = "";
-    DadosDoUsuario[0].senha = inputSenha.value;
-    console.log(DadosDoUsuario[0].senha)
+    if (document.querySelector(".ContainerSenha")) {
+        return;
+    }
 
 
     // Montando a estrutura
@@ -49,11 +53,13 @@ function criainputSenha() {
 
 
 }
-
+let emailRecuperacao = "";
 async function recuperaSenha() {
+
+    
     let VerificaEmail = email.value
 
-    let resposta = await fetch("https://tela-de-login-hsj6.onrender.com/senha", {
+    let resposta = await fetch("https://tela-de-login-hsj6.onrender.com/verificarEmail", {
 
         method: "POST",
         headers: {
@@ -68,16 +74,43 @@ async function recuperaSenha() {
 
     let dados = await resposta.json()
 
-    console.log(dados)
-
-    if (dados.sucesso) {
-        criainputSenha()
-    }
-
+   
+if (dados.sucesso) {
+     emailRecuperacao = email.value;
+    criainputSenha();
+    etapa = 2;
+}
+  
+ 
     else {
         let mensagemErro = document.createElement("p");
         mensagemErro.textContent = "Email não encontrado";
         mensagemErro.style.color = "red";
         inputs.appendChild(mensagemErro);
+    }
+}
+
+
+
+
+
+
+ async function  enviarNovaSenha(){
+ 
+    const requisicao = await fetch('https://tela-de-login-hsj6.onrender.com/recuperaSenha',{
+        method:"POST",
+        headers:{
+    "Content-Type": "application/json"
+},
+        body: JSON.stringify({
+          email:emailRecuperacao,
+          senha: inputSenha.value
+        }) 
+   });
+    let resposta = await requisicao.json()
+
+
+    if (resposta.sucesso) {
+        window.location.href = "./telaDeLogin.html";
     }
 }

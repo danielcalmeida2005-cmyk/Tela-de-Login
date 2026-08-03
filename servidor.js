@@ -8,9 +8,10 @@ app.use(express.json());
 let usuarios = [];
 let id = 1;
 
+// createAccount.js
 app.post('/usuarios', (req, res) => {
 
-console.log(req.body);
+
     const { email, senha } = req.body;
 
     const novoUsuario = {
@@ -25,7 +26,7 @@ console.log(req.body);
     res.status(201).json(novoUsuario);
 });
 
-
+// paginaprincipal.js
 app.post('/login', (req, res) => {
 const { email,senha} = req.body;
 console.log(req.body)
@@ -46,8 +47,8 @@ console.log(req.body)
 
 });
 
-
-app.post('/senha',(req,res)=>{
+// forgot.js
+app.post('/verificarEmail',(req,res)=>{
 const {email} = req.body
 
 
@@ -64,6 +65,22 @@ const {email} = req.body
         sucesso: false,
        
     });
+
+
+})
+
+
+// forgot.js
+app.post('/recuperaSenha',(req,res)=>{
+const {email,senha} = req.body
+
+let usuario = usuarios.find(item =>
+    item.email === email
+)
+
+if(usuario){
+usuario.senha = senha;
+}
 
 
 })
